@@ -1,44 +1,76 @@
-# Violence Detection System
+# Gender and Crowd Detection Project
 
-This project detects violent behavior in videos using YOLOv8, MediaPipe, and OpenCV.
+## Overview
+This project combines gender detection and crowd detection capabilities using advanced computer vision techniques. It leverages deep learning models to classify faces as male or female and detect crowds in video streams.
 
 ## Features
-- **YOLOv8**: Detects objects and people.
-- **MediaPipe**: Tracks body poses.
-- **OpenCV**: Handles video input and frame processing.
+- **Real-time gender detection** from video input.
+- **Crowd detection** using YOLOv8 for object recognition.
+- **Pose tracking** with MediaPipe to understand human movement.
+- **High accuracy** leveraging pre-trained deep learning models.
+- **Real-time processing** for immediate analysis and response.
 
-## Installation
+## Setup and Installation
 
-1. Clone the repository:
+1. **Clone the repository:**
    ```bash
-   git clone <your-repo-url>
-   cd <your-project-folder>
+   git clone <repository_url>
+   cd detection_project
    ```
 
-2. Install dependencies:
+2. **Create a virtual environment (optional but recommended):**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Linux/Mac
+   venv\Scripts\activate      # On Windows
+   ```
+
+3. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Ensure you have a video file for analysis, or adjust the path in `mainsfin.py`.
+4. **Download pretrained models:**
+   - YOLOv8 weights: Download from [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics)
+   - MediaPipe: Install via `pip install mediapipe`
+   - Gender classification model (e.g., pre-trained CNN)
 
 ## Usage
 
-Run the script:
-```bash
-python mainsfin.py
-```
+1. **Run the project:**
+   ```bash
+   python mainsfin2.py
+   ```
 
-## File Structure
-- `mainsfin.py`: Core script handling video input, YOLO detection, and MediaPipe pose tracking.
-- `requirements.txt`: Contains the required packages.
+2. **Provide video input:**
+   - By default, it uses your webcam. You can change this to process an image or video file by passing the filename as an argument.
 
-## Dependencies
-Make sure you have Python 3.8+ installed.
+3. **Output:**
+   - Detected faces labeled as **Male** or **Female**.
+   - Crowd detection with recognized people and activities highlighted.
+
+## Configuration
+You can customize the configuration file (`config.yaml`):
+- Input source (file or webcam)
+- Confidence thresholds
+- Model paths
+- Output preferences
+
+## Performance Considerations
+- Ensure GPU support for faster inference (CUDA for NVIDIA GPUs).
+- Optimize image and video resolution for performance without losing accuracy.
 
 ## Future Improvements
-- Enhance violence classification with ST-GCN.
-- Add real-time video stream support.
+- Add age detection alongside gender classification.
+- Implement multi-face tracking for crowded scenes.
+- Support non-binary classification models.
+- Enhance behavior analysis with more advanced activity recognition.
+
+## Contributing
+Contributions are welcome! Feel free to open an issue or pull request to suggest improvements.
+
+## License
+This project is licensed under the MIT License.
 
 ---
 
